@@ -1,0 +1,98 @@
+.header{
+  position: fixed;
+  top: .1rem;
+  left: 0;
+  right: 0;
+  height: 1.4rem;
+  box-shadow: 0 0 .2rem rgba(243,218,93,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #82bbe5;
+  color: #fff;
+  font-size: .4rem;
+}
+.header:hover{
+  animation: glow 1s infinite alternate ease-in-out;
+}
+.main{
+  margin-top: 1.5rem;
+  padding-bottom: 1.4rem;
+}
+.main ul{
+  list-style-type:none;
+}
+.main ul li{
+  height: .5rem;
+  line-height: .5rem;
+}
+.hover-scale{
+  width: 1.333333rem;
+  height: 1.333333rem;
+  float: left;
+  background-color: rgb(55, 212, 102);
+  transform: scale(1);
+  margin-top: .533333rem;
+  margin-right: .4rem;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.hover-scale:hover{
+  transform: scale(1.3);
+  box-shadow: 0 0 50px 10px rgba(0,0,0,0.3);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.hover-floating{
+  position: relative;
+  width: 1.333333rem;
+  height: 1.333333rem;
+  float: left;
+  margin-top: .533333rem;
+  background-color: rgb(63, 118, 236);
+  transform: translateY(0);
+  transition: transform 1s;
+}
+/* 利用after做出阴影效果 */
+.hover-floating:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -.4rem;
+  left: 50%;
+  height: .106667rem;
+  width: 100%;
+  box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.2);
+  transform: translate(-50%, 0);
+  transition: transform 1s;
+}
+.hover-floating:hover{
+  transform: translateY(-.533333rem);
+  transition: transform 1s;
+}
+.hover-floating:hover:after{
+  transform: translate(-50%, .533333rem) scale(0.75);
+  transition: transform 1s;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.4rem;
+  box-shadow: 0 0 .2rem rgba(243,218,93,0.5);
+  display: flex;
+  align-items: center;
+  background-color: #82bbe5;
+}
+@-webkit-keyframes glow {
+  0% {
+    -webkit-box-shadow:0 0 0.6rem rgba(243,218,93,0.5);
+    border-color: rgb(226, 248, 26);
+  }
+  100% {
+    -webkit-box-shadow:0 0 0.6rem rgba(243,218,93,1.0), 0 0 0.8rem rgba(214, 216, 115,1.0);
+    border-color: rgb(226, 248, 26);
+  }
+}
